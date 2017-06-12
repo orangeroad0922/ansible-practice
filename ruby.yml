@@ -1,0 +1,20 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: install rbenv
+      git: repo=https://github.com/rbenv/rbenv.git dest=~/.rbenv
+
+    - name: install ruby-build
+      git: repo=https://github.com/rbenv/ruby-build.git dest=~/.rbenv/plugins/ruby-build
+
+    - name: set path for rbenv
+      lineinfile: path=~/.bash_profile line='export PATH="$HOME/.rbenv/bin:$PATH"'
+    - name: set eval
+      lineinfile: path=~/.bash_profile line='eval "$(rbenv init -)"'
+
+    - name: source ~/.bash_profile
+      shell: source ~/.bash_profile
+
+    - name: install ruby
+      shell: rbenv install 2.3.1 creates=~/.rbenv/versions/2.3.1
+

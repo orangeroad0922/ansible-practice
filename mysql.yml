@@ -1,0 +1,11 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: install mysql5.7
+      yum: name=http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm state=installed
+      become: yes
+
+    - name: install mysql-community-server5.7
+      yum: name=mysql-community-server state=installed
+      become: yes
+
