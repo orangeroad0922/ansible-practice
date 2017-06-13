@@ -1,6 +1,6 @@
 # ansible-practice
 * ローカルホストへのインストール
 
-** mysql5.7のインストール
+* mysql5.7のインストール
 
-** ruby2.3.1のインストール(rbenv/ruby-build-ruby)
+* ruby2.3.1のインストール(rbenv/ruby-build-ruby)
